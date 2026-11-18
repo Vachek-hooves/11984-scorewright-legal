@@ -17,24 +17,37 @@
       <a href="refund.html">Refund Policy &amp; Support</a>
     </nav>
   </header>
-  <p class="updated">Last updated: 2026-11-16</p>
+  <p class="updated">Last updated: 2026-11-18</p>
 
   <section>
     <h2>What the app stores</h2>
     <p>All game data you create — saved games, player names, scores, rules notes, and match
-    history — is stored <strong>only on your device</strong> (local database). It is never
-    uploaded to us or any third party, and there is no account or sign-in.</p>
+    history — is stored <strong>only on your device</strong> (local database) by default. No
+    account or sign-in is required to use any feature.</p>
+  </section>
+
+  <section>
+    <h2>Optional backup &amp; sync</h2>
+    <p>Settings &rarr; "Backup &amp; sync" lets you sign in with Google, entirely optionally, to
+    back up your saved games and match history and sync them across your devices. Signing in
+    sends that same game data to Cloud Firestore (a Google Firebase database), stored under your
+    Google account's unique ID. If you never tap "Sign in with Google", none of your game data
+    ever leaves your device. Signing out stops further sync but does not delete what was already
+    backed up — email the contact below to request deletion of synced data.</p>
   </section>
 
   <section>
     <h2>Third-party services</h2>
     <ul>
-      <li><strong>Google AdMob</strong> shows banner ads to users on the free tier. AdMob may
-      collect an advertising identifier and other data to serve and measure ads, per
-      <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google's AdMob privacy policy</a>.</li>
       <li><strong>Google Play Billing</strong> processes the optional one-time "Pro" purchase.
       Payment details are handled entirely by Google Play; this app never sees your payment
       information.</li>
+      <li><strong>Firebase Authentication</strong> issues the anonymous identity every install
+      gets automatically (so the optional sync feature above has somewhere to attach to) and, only
+      if you choose to sign in, your Google account identity (name, email, profile photo) for
+      that same purpose.</li>
+      <li><strong>Cloud Firestore</strong> stores your game data only if you've signed in with
+      Google, as described above.</li>
       <li><strong>Firebase Analytics and Crashlytics</strong> collect anonymous usage events (e.g.
       which screens are opened, whether the Pro purchase completed) and crash diagnostics to help
       us fix bugs, per
@@ -43,13 +56,15 @@
       contact email shown in the app without requiring an app update; it does not collect
       personal data beyond standard Firebase app-instance identifiers.</li>
     </ul>
+    <p>Scorewright does not show ads and does not use AdMob.</p>
   </section>
 
   <section>
     <h2>Data deletion</h2>
-    <p>Because all game data lives on your device, uninstalling the app deletes it. To stop ad
-    personalization or analytics collection, see your device's ad settings or disable Crashlytics
-    collection in Settings within the app.</p>
+    <p>Because all game data lives on your device by default, uninstalling the app deletes it. If
+    you've signed in with Google, uninstalling does not delete the copy already backed up to
+    Cloud Firestore — email the contact below to request that deletion. To stop analytics
+    collection, disable Crashlytics collection in Settings within the app.</p>
   </section>
 
   <section>
